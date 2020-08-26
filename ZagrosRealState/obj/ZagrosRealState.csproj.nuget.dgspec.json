@@ -1,0 +1,478 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj",
+        "projectName": "ZagrosRealState.Common",
+        "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj",
+        "packagesPath": "C:\\Users\\iDevTeam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\iDevTeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj": {
+                "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "MD.PersianDateTime.Core": {
+              "target": "Package",
+              "version": "[2.3.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj",
+        "projectName": "ZagrosRealState.Data",
+        "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj",
+        "packagesPath": "C:\\Users\\iDevTeam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\iDevTeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Entities\\ZagrosRealState.Entities.csproj": {
+                "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Entities\\ZagrosRealState.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Entities\\ZagrosRealState.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Entities\\ZagrosRealState.Entities.csproj",
+        "projectName": "ZagrosRealState.Entities",
+        "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Entities\\ZagrosRealState.Entities.csproj",
+        "packagesPath": "C:\\Users\\iDevTeam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\iDevTeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj",
+        "projectName": "ZagrosRealState.SMS",
+        "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj",
+        "packagesPath": "C:\\Users\\iDevTeam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\iDevTeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj",
+        "projectName": "ZagrosRealState.ViewModels",
+        "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\iDevTeam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\iDevTeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj",
+        "projectName": "ZagrosRealState",
+        "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj",
+        "packagesPath": "C:\\Users\\iDevTeam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\iDevTeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj": {
+                "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj"
+              },
+              "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj": {
+                "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj"
+              },
+              "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj": {
+                "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj"
+              },
+              "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Magick.NET-Q16-AnyCPU": {
+              "target": "Package",
+              "version": "[7.15.4, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "ReflectionIT.Mvc.Paging": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "SmsIrRestfulNetCore": {
+              "target": "Package",
+              "version": "[1.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

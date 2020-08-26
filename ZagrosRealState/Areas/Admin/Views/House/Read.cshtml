@@ -1,0 +1,244 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ZagrosRealState.ViewModels.Views.ViewDataHouseModel>
+@inject ZagrosRealState.Common.PublicClasses.ConvertDate convertDate
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, ReflectionIT.Mvc.Paging
+@{
+    ViewData["Title"] = "نمایش اطلاعات منزل";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+            </div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript: void(0);">داشبرد مدیریت سامانه املاک زاگرس</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);">مدیریت دسته بندی ها</a></li>
+                <li class="breadcrumb-item active"> اطلاعات منزل</li>
+            </ol>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <!-- end inbox-rightbar-->
+        <div class="clearfix"></div>
+    </div> <!-- end Col -->
+    <div class="col-lg-12">
+        <div class="card-box ribbon-box">
+            <div class="ribbon ribbon-primary float-left">مدیریت اطلاعات منزل</div>
+            <div class="dropdown float-right">
+                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                    <i class="mdi mdi-dots-horizontal"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="javascript:window.print()" class="dropdown-item mdi mdi-printer mr-1"> دریافت گزارش </a>
+                    <a href="javascript:void(0);" i class="dropdown-item  mdi mdi-undo-variant"> بروزرسانی داده ها </a>
+                </div>
+            </div>
+            <div class="ribbon-content">
+                <div class="col-sm-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <h4 class="header-title">جستجوی داده ها</h4>
+                                <br />
+                                <p class="sub-header">
+                                    جهت جستجوی اطلاعات منزل از پارامتر های زیر استفاده کنید.
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>نام و نام خانوادگی موجر</label>
+                                                <input type="text" class="form-control" maxlength="50" placeholder="نام یا نام خانوادگی موجر">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>شماره موبایل</label>
+                                                <input type="text" class="form-control" maxlength="11" placeholder="شماره موبایل را وارد نمایید">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>آدرس</label>
+                                                <input type="text" class="form-control" maxlength="512" placeholder="آدرس منزل را وارد نمایید">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label for="input">وضعیت منزل</label>
+                                                <select asp-items="ViewBag.House_LST_Statuses" name="House_LST_StatusName" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                </div>
+                                <!-- end row -->
+
+                            </div> <!-- end card-box -->
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+
+                    <div class="modal fade editHouse" tabindex="-1" role="dialog"
+                         aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static"
+                         style="display: none;">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary">
+                                    <h4 class="modal-title" id="myLargeModalLabel">ویرایش اطلاعات منزل</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">کد ملک</label>
+                                            <input type="text" class="form-control" id="input_CodeMelk" disabled="" placeholder="1001">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">موجر</label>
+                                            <input type="text" class="form-control" id="input_MoujerInfo" placeholder="ایمان آسمانی">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">موبایل</label>
+                                            <input type="text" class="form-control" id="input_Phone" placeholder="0936524120">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">متراژ</label>
+                                            <input type="text" class="form-control" id="input_Metrazh" placeholder="150">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">طبقه</label>
+                                            <input type="text" class="form-control" id="input_Tabagheh" placeholder="3">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">آب</label>
+                                            <select asp-items="ViewBag.House_LST_Abs" name="House_LST_Abs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">گاز</label>
+                                            <select asp-items="ViewBag.House_LST_Gazs" name="House_LST_Gazs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">مبلغ رهن</label>
+                                            <input type="text" class="form-control" id="input_PriceRahn" placeholder="1.500.000.000">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">مبلغ اجاره</label>
+                                            <input type="text" class="form-control" id="input_PriceEjareh" placeholder="25.000.000">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="input" class="col-form-label">آدرس</label>
+                                            <input type="text" class="form-control" id="input_Touzihat" placeholder="شهر صدرا - بلوار امام خمینی - ساختمان ایلیا">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">وضعیت منزل</label>
+                                            <select asp-items="ViewBag.House_LST_Statuses" name="House_LST_Statuses" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-success waves-effect waves-light width-md" id="example-success">ویرایش نهایی اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-outline-danger waves-effect waves-light width-md">بازگشت<i class="mdi mdi-close ml-2"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade deleteHouse" tabindex="-1" role="dialog"
+                         aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static"
+                         style="display: none;">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h4 class="modal-title" id="myLargeModalLabel">حذف اطلاعات منزل</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        شما قصد حذف اطلاعات مربوط به منزل را دارید. آیا ادامه میدهید؟
+                                        <hr />
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light width-md">حذف نهایی اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-outline-danger waves-effect waves-light width-md">بازگشت<i class="mdi mdi-close ml-2"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*@if (ViewBag.AddNewDataMessageHouse != null)
+                        {
+                            <div class="alert alert-danger alert-dismissible">
+                                @ViewBag.AddNewDataMessageHouse
+                            </div>
+                        }*@
+
+                    <table id="datatable" class="table table-striped table-bordered dt-responsive wrap">
+                        <thead>
+                            <tr>
+                                <th>کد</th>
+                                <th>موجر</th>
+                                <th>موبایل</th>
+                                <th>متراژ</th>
+                                <th>طبقه</th>
+                                <th>آب</th>
+                                <th>گاز</th>
+                                <th>مبلغ رهن. ریال</th>
+                                <th>مبلغ اجاره. ریال</th>
+                                <th>آدرس</th>
+                                <th>وضعیت منزل</th>
+                                <th>تاریخ ثبت</th>
+                                <th>عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var HouseViewItem in Model)
+                            {
+                                <tr>
+                                    <td>@HouseViewItem.HouseCode_Id</td>
+                                    <td>@HouseViewItem.House_Family</td>
+                                    <td>@HouseViewItem.House_Mobile</td>
+                                    <td>@HouseViewItem.House_Metrazh</td>
+                                    <td>@HouseViewItem.House_Tabagheh</td>
+                                    <td>@HouseViewItem.House_AB</td>
+                                    <td>@HouseViewItem.House_Gaz</td>
+                                    <td>@HouseViewItem.House_PriceRahn</td>
+                                    <td>@HouseViewItem.House_PriceEjareh</td>
+                                    <td>@HouseViewItem.House_Address</td>
+                                    <td>@HouseViewItem.House_StatusHouse</td>
+                                    <td>@convertDate.ConvertMiladiToShamsi((DateTime)HouseViewItem.House_DatePublish, "yyyy/MM/dd")</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-sm btn-light waves-effect" data-toggle="modal" data-target=".editHouse"><i class="mdi mdi-pencil font-18 vertical-middle"></i></button>
+                                        <a href="#" data-toggle="modal" data-target=".deleteHouse" button type="submit" class="btn btn-sm btn-light waves-effect"><i class="mdi mdi-delete font-18 vertical-middle"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row">
+
+                        <nav>
+                            @await this.Component.InvokeAsync("Pager", new { PagingList = this.Model })
+                        </nav>
+
+                    </div>
+                </div> <!-- end col -->
+            </div>
+        </div>
+    </div>
+</div>
+
+

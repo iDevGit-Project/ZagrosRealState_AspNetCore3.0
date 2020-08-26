@@ -1,0 +1,97 @@
+﻿@inject ZagrosRealState.Common.PublicClasses.ConvertDate convertDate
+<li class="dropdown d-none d-lg-block">
+    <a class="nav-link dropdown-toggle mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+        <span class="align-middle">@convertDate.ConvertMiladiToShamsi(DateTime.Now, "dddd d MMMM yyyy")<i class="mdi mdi-calendar"></i> </span>
+    </a>
+</li>
+
+<li class="dropdown d-none d-lg-block">
+    <a class="nav-link dropdown-toggle mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+        <img src="/images/flags/iran.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">فارسی <i class="mdi mdi-chevron-down"></i> </span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right">
+        <!-- item-->
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <img src="/images/flags/us.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">انگلیسی</span>
+        </a>
+    </div>
+</li>
+
+<li class="dropdown notification-list">
+    <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+        <i class="dripicons-bell noti-icon"></i>
+        <span class="badge badge-info noti-icon-badge">4</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+        <!-- item-->
+        <div class="dropdown-item noti-title">
+            <h5 class="m-0">
+                <span class="float-right">
+                    <a href="#" class="text-dark">
+                        <small>پاک کردن همه</small>
+                    </a>
+                </span>اعلانات وب سایت
+            </h5>
+        </div>
+
+        <div class="slimscroll noti-scroll">
+
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                <div class="notify-icon bg-warning"><i class="mdi mdi-comment-account-outline"></i> </div>
+                <p class="notify-details">هیچ داده ای وجود ندارد</p>
+                <p class="text-muted mb-0 user-msg">
+                    <small> ساعت : ..:..  تاریخ :  ../../.. </small>
+                </p>
+            </a>
+
+        </div>
+
+        <!-- All-->
+        <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+            نمایش همه
+            <i class="fi-arrow-right"></i>
+        </a>
+
+    </div>
+</li>
+
+<li class="dropdown notification-list">
+    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
+       href="#" role="button" aria-haspopup="false" aria-expanded="false">
+        <img src="/images/users/avatar-4.png" alt="user-image" class="rounded-circle">
+        <span class="pro-user-name ml-1">
+            حامد شریعتی مهر <i class="mdi-chevron-down mdi"></i>
+        </span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+
+        <a href="#" class="dropdown-item notify-item">
+            <i class="dripicons-user"></i>
+            <span>آخرین ورود : 1398/08/25</span>
+        </a>
+
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <i class="dripicons-gear"></i>
+            <span>کاربرجاری : مدیر سیستم</span>
+        </a>
+
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <i class="dripicons-view-apps"></i>
+            <span>تغییر کلمه عبور</span>
+        </a>
+
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <i class="dripicons-lock"></i>
+            <span>قفل صفحه</span>
+        </a>
+
+    </div>
+</li>
+<li class="dropdown notification-list">
+    <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+        <i class="fe-settings noti-icon"></i>
+    </a>
+</li>

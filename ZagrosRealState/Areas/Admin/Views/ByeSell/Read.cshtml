@@ -1,0 +1,240 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ZagrosRealState.ViewModels.Views.ViewDataByeAndSellModel>
+@inject ZagrosRealState.Common.PublicClasses.ConvertDate convertDate
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, ReflectionIT.Mvc.Paging
+@{
+    ViewData["Title"] = "نمایش اطلاعات خرید و فروش";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+            </div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript: void(0);">داشبرد مدیریت سامانه املاک زاگرس</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);">مدیریت دسته بندی ها</a></li>
+                <li class="breadcrumb-item active"> اطلاعات خرید و فروش</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="card-box ribbon-box">
+        <div class="ribbon ribbon-primary float-left">مدیریت اطلاعات خرید و فروش</div>
+        <div class="dropdown float-right">
+            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                <i class="mdi mdi-dots-horizontal"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="javascript:window.print()" class="dropdown-item mdi mdi-printer mr-1"> دریافت گزارش </a>
+                <a href="javascript:void(0);" i class="dropdown-item  mdi mdi-undo-variant"> بروزرسانی داده ها </a>
+            </div>
+        </div>
+        <div class="ribbon-content">
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <h4 class="header-title">جستجوی داده ها</h4>
+                                <br />
+                                <p class="sub-header">
+                                    جهت جستجوی اطلاعات خرید و فروش از پارامتر های زیر استفاده کنید.
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>نام و نام خانوادگی موجر</label>
+                                                <input type="text" class="form-control" maxlength="50" placeholder="نام یا نام خانوادگی موجر">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>شماره موبایل</label>
+                                                <input type="text" class="form-control" maxlength="11" placeholder="شماره موبایل را وارد نمایید">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-4">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>آدرس</label>
+                                                <input type="text" class="form-control" maxlength="512" placeholder="آدرس مکان را وارد نمایید">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-2">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label for="input">اقلام مورد معامله</label>
+                                                <select asp-items="ViewBag.ByeAndSell_LST_JahatMoameles" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                </div>
+                                <!-- end row -->
+
+                            </div> <!-- end card-box -->
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+                    <!-- START - Modal -->
+                    @*<form asp-action="">*@
+                    <div class="modal fade editBuySell" tabindex="-1" role="dialog"
+                         aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static"
+                         style="display: none;">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary">
+                                    <h4 class="modal-title" id="myLargeModalLabel">ویرایش اطلاعات خرید و فروش</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-1">
+                                            <label for="input" class="col-form-label">کد ملک</label>
+                                            <input type="text" class="form-control" id="input_CodeMelk" disabled="" placeholder="1001">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">به نام</label>
+                                            <input type="text" class="form-control" id="input_Touzihat" placeholder="ناهید نادری">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">موبایل</label>
+                                            <input type="text" class="form-control" id="input_Phone" placeholder="09174563210">
+                                        </div>
+                                        <div class="form-group col-md-5">
+                                            <label for="input" class="col-form-label"> موضوع مورد معامله </label>
+                                            <select asp-items="ViewBag.ByeAndSell_LST_MoredeMoamelehs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">نوع کاربری</label>
+                                            <select asp-items="ViewBag.ByeAndSell_LST_Karbaries" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label"> به جهت </label>
+                                            <select asp-items="ViewBag.ByeAndSell_LST_JahatMoameles" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="input" class="col-form-label">مشخصات مورد معامله</label>
+                                            <input type="text" class="form-control" id="input_Metrazh" placeholder="نوساز و صفر">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">به مبلغ. ریال</label>
+                                            <input type="text" class="form-control" id="input_PriceRahn" placeholder="9.000.000.000">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">کدپستی | پلاک | قطعه</label>
+                                            <input type="text" class="form-control" id="input_PriceEjareh" placeholder="7199347825">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="input" class="col-form-label">واقع در</label>
+                                            <input type="text" class="form-control" id="input_Tabagheh" placeholder="شهر صدرا - بلوار امام خمینی - کوچه یاس شرقی - پ 285">
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-success waves-effect waves-light width-md">ویرایش نهایی اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-outline-danger waves-effect waves-light width-md">بازگشت<i class="mdi mdi-close ml-2"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade deleteBuySell" tabindex="-1" role="dialog"
+                         aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static"
+                         style="display: none;">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h4 class="modal-title" id="myLargeModalLabel">حذف اطلاعات خرید و فروش</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        شما قصد حذف اطلاعات مربوط به خرید و فروش را دارید. آیا ادامه میدهید؟
+                                        <hr />
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light width-md">حذف نهایی اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-outline-danger waves-effect waves-light width-md">بازگشت<i class="mdi mdi-close ml-2"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END - Modal -->
+
+                    @if (ViewBag.AddNewDataMessageByeSell != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible">
+                            @ViewBag.AddNewDataMessageByeSell
+                        </div>
+                    }
+
+                    <table id="datatable" class="table table-striped table-bordered dt-responsive wrap">
+                        <thead>
+                            <tr>
+                                <th>کد</th>
+                                <th>به نام</th>
+                                <th>موبایل</th>
+                                <th>مورد معامله</th>
+                                <th>نوع کاربری</th>
+                                <th>به جهت</th>
+                                <th>مشخصات</th>
+                                <th>واقع در</th>
+                                <th>مبلغ. ریال</th>
+                                <th>کدپستی | پلاک | قطعه</th>
+                                <th>تاریخ ثبت</th>
+                                <th>عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var BuySellViewItem in Model)
+                            {
+                                <tr>
+                                    <td>@BuySellViewItem.ByeAndSellCode_Id</td>
+                                    <td>@BuySellViewItem.ByeAndSell_Family</td>
+                                    <td>@BuySellViewItem.ByeAndSell_Mobile</td>
+                                    <td>@BuySellViewItem.ByeAndSell_TypeMoredeMoameleh</td>
+                                    <td>@BuySellViewItem.ByeAndSell_TypeKarbary</td>
+                                    <td>@BuySellViewItem.ByeAndSell_JahateMoameleh</td>
+                                    <td>@BuySellViewItem.ByeAndSell_Moshakhasat</td>
+                                    <td>@BuySellViewItem.ByeAndSell_Address</td>
+                                    <td>@BuySellViewItem.ByeAndSell_Price</td>
+                                    <td>@BuySellViewItem.ByeAndSell_CodePosty</td>
+                                    <td>@convertDate.ConvertMiladiToShamsi((DateTime)BuySellViewItem.ByeAndSell_DatePublish, "yyyy/MM/dd")</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-sm btn-light waves-effect" data-toggle="modal" data-target=".editBuySell"><i class="mdi mdi-pencil font-18 vertical-middle"></i></button>
+                                        <a href="#" data-toggle="modal" data-target=".deleteBuySell" button type="submit" class="btn btn-sm btn-light waves-effect"><i class="mdi mdi-delete font-18 vertical-middle"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row">
+
+                        <nav>
+                            @await this.Component.InvokeAsync("Pager", new { PagingList = this.Model })
+                        </nav>
+
+                    </div>
+                    @*</form>*@
+                </div> <!-- end col -->
+            </div>
+        </div>
+    </div>
+
+</div>
+

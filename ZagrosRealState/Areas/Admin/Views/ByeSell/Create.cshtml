@@ -1,0 +1,152 @@
+﻿@model ZagrosRealState.ViewModels.Views.CreateByeAndSellViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ثبت اطلاعات خرید و فروش";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                </div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">داشبرد مدیریت سامانه املاک زاگرس</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">ثبت اطلاعات</a></li>
+                    <li class="breadcrumb-item active">ثبت اطلاعات خرید و فروش</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-box">
+                <!-- Left sidebar -->
+                <div class="inbox-leftbar">
+                    <form action="#" method="post" class="dropzone" id="myAwesomeDropzone">
+                        <div class="fallback">
+                            <input name="file" type="file" />
+                        </div>
+                        <div class="dz-message needsclick">
+                            <span class="text-muted font-11">( تصاویر مربوط به خرید و فروش را بارگزاری نمایید. )</span>
+                            <br />
+                            <span class="text-muted font-11">---</span>
+                            <br />
+                            <span class="text-muted font-11">( پسوند تصاویر : jpeg , png )</span>
+                            <br />
+                            <span class="text-muted font-11">---</span>
+                            <br />
+                            <span class="text-muted font-11">( حداکثر حجم : 150 کیلوبایت )</span>
+                            <br />
+                            <br />
+                            <i class="h1 text-muted dripicons-cloud-upload"></i>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Left sidebar -->
+
+                <form asp-action="Create">
+                    <div class="inbox-rightbar">
+                        <h4 class="header-title">مشخصات خرید و فروش</h4>
+                        <br />
+                        <br />
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            <h4 class="alert-heading">کاربرگرامی</h4>
+                            <p>جهت تکمیل اطلاعات مربوط به خرید و فروش، تکمیل موارد زیر الزامی هستند :</p>
+                            <hr>
+                            <strong>* موجر ، </strong>
+                            <strong>موبایل ، </strong>
+                            <strong>مورد معامله ، </strong>
+                            <strong>مشخصات ، </strong>
+                            <strong>واقع در ، </strong>
+                            <strong>جهت استفاده ، </strong>
+                            <strong>به مبلغ ، </strong>
+                            <strong>کدپستی | پلاک | قطعه و</strong>
+                            <strong>به نام .</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-1">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSellCode_Id">کد ملک</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSellCode_Id" id="input_CodeMelk" placeholder="کد ملک">
+                                <span asp-validation-for="ByeAndSellCode_Id" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_TypeMoredeMoameleh"> موضوع مورد معامله </label>
+                                <select asp-for="ByeAndSell_TypeMoredeMoameleh" asp-items="ViewBag.ByeAndSell_LST_MoredeMoamelehs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="ByeAndSell_TypeMoredeMoameleh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_TypeKarbary">نوع کاربری</label>
+                                <select asp-for="ByeAndSell_TypeKarbary" asp-items="ViewBag.ByeAndSell_LST_Karbaries" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="ByeAndSell_TypeKarbary" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_JahateMoameleh">به جهت</label>
+                                <select asp-for="ByeAndSell_JahateMoameleh" asp-items="ViewBag.ByeAndSell_LST_JahatMoameles" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="ByeAndSell_JahateMoameleh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_Moshakhasat">مشخصات مورد معامله</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSell_Moshakhasat" id="input_Metrazh" placeholder="مشخصات مورد معامله">
+                                <span asp-validation-for="ByeAndSell_Moshakhasat" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_TypeEstefadeh">مورد استفاده</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSell_TypeEstefadeh" id="input_Tabagheh" placeholder="جهت استفاده">
+                                <span asp-validation-for="ByeAndSell_TypeEstefadeh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_Price">به مبلغ. ریال</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSell_Price" id="input_Tabagheh" placeholder="ریال">
+                                <span asp-validation-for="ByeAndSell_Price" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_CodePosty">کدپستی | پلاک | قطعه</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSell_CodePosty" id="input_Tabagheh" placeholder="کدپستی | پلاک | قطعه">
+                                <span asp-validation-for="ByeAndSell_CodePosty" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_Family">به نام</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSell_Family" id="input_Tabagheh" placeholder="نام و نام خانوادگی فروشنده یا خریدار">
+                                <span asp-validation-for="ByeAndSell_Family" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_Mobile">شماره تماس</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSell_Mobile" id="input_Tabagheh" placeholder="شماره تماس">
+                                <span asp-validation-for="ByeAndSell_Mobile" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-9">
+                                <label for="input" class="col-form-label" asp-for="ByeAndSell_Address">واقع در</label>
+                                <input type="text" class="form-control" asp-for="ByeAndSell_Address" id="input_Tabagheh" placeholder="آدرس مکان مورد نظر را وارد نمایید">
+                                <span asp-validation-for="ByeAndSell_Address" class="text-danger field-validation-error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success waves-effect waves-light width-md">ثبت اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                        <button type="button" class="btn btn-outline-danger waves-effect waves-light width-md">انصراف<i class="mdi mdi-close ml-2"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

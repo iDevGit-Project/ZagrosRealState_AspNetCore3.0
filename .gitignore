@@ -1,0 +1,15 @@
+.vs
+ZagrosRealState.Common/bin
+ZagrosRealState.Common/obj
+ZagrosRealState.Data/bin
+ZagrosRealState.Data/obj
+ZagrosRealState.Email/bin
+ZagrosRealState.Email/obj
+ZagrosRealState.Entities/bin
+ZagrosRealState.Entities/obj
+ZagrosRealState.IocConfig/bin
+ZagrosRealState.IocConfig/obj
+ZagrosRealState.SMS/bin
+ZagrosRealState.SMS/obj
+ZagrosRealState.ViewModels/bin
+ZagrosRealState.ViewModels/obj

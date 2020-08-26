@@ -1,0 +1,218 @@
+﻿@model ZagrosRealState.ViewModels.Views.CreateHouseViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ثبت اطلاعات منزل";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                </div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">داشبرد مدیریت سامانه املاک زاگرس</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">ثبت اطلاعات</a></li>
+                    <li class="breadcrumb-item active">ثبت اطلاعات منزل</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-box">
+                <!-- Left sidebar -->
+                <div class="inbox-leftbar">
+                    <form action="#" method="post" class="dropzone" id="myAwesomeDropzone">
+                        <div class="fallback">
+                            <input name="file" type="file" />
+                        </div>
+                        <div class="dz-message needsclick">
+                            <span class="text-muted font-11">( تصاویر مربوط به منزل را بارگزاری نمایید. )</span>
+                            <br />
+                            <span class="text-muted font-11">---</span>
+                            <br />
+                            <span class="text-muted font-11">( پسوند تصاویر : jpeg , png )</span>
+                            <br />
+                            <span class="text-muted font-11">---</span>
+                            <br />
+                            <span class="text-muted font-11">( حداکثر حجم : 150 کیلوبایت )</span>
+                            <br />
+                            <br />
+                            <i class="h1 text-muted dripicons-cloud-upload"></i>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Left sidebar -->
+                <form asp-action="Create">
+                    <div class="inbox-rightbar">
+                        <h4 class="header-title">مشخصات منزل</h4>
+                        <br />
+                        <br />
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            <h4 class="alert-heading">کاربرگرامی</h4>
+                            <p>جهت تکمیل اطلاعات مربوط به منزل، تکمیل موارد زیر الزامی هستند :</p>
+                            <hr>
+                            <strong>* موجر ، </strong>
+                            <strong>موبایل ، </strong>
+                            <strong>متراژ ، </strong>
+                            <strong>طبقه ، </strong>
+                            <strong>آب ، </strong>
+                            <strong>گاز ، </strong>
+                            <strong>مبلغ رهن ، </strong>
+                            <strong>مبلغ اجاره ، </strong>
+                            <strong>آدرس و </strong>
+                            <strong>وضعیت منزل .</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="HouseCode_Id">کد ملک</label>
+                                <input type="text" class="form-control" asp-for="HouseCode_Id" id="HouseCode_Id" placeholder="کد ملک">
+                                <span asp-validation-for="HouseCode_Id" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_Metrazh">متراژ</label>
+                                <input type="text" class="form-control" asp-for="House_Metrazh" id="House_Metrazh" placeholder="مترمربع">
+                                <span asp-validation-for="House_Metrazh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_NumTabagheh">طبقه</label>
+                                <input type="text" class="form-control" asp-for="House_NumTabagheh" id="House_NumTabagheh" placeholder="طبقه">
+                                <span asp-validation-for="House_NumTabagheh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_TypeDarb">درب از</label>
+                                <select asp-for="House_TypeDarb" asp-items="ViewBag.House_LST_Darbs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_TypeDarb" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_StatusEjareh">وضعیت اجاره</label>
+                                <select asp-for="House_StatusEjareh" asp-items="ViewBag.House_LST_Ejarehs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_StatusEjareh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_NumKahb">تعداد خواب</label>
+                                <select asp-for="House_NumKahb" asp-items="ViewBag.House_LST_NumKhabs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_NumKahb" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_Tabagheh">طبقه</label>
+                                <select asp-for="House_Tabagheh" asp-items="ViewBag.House_LST_Tabaghehs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_Tabagheh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_Parking">پارکینگ</label>
+                                <select asp-for="House_Parking" asp-items="ViewBag.House_LST_Parkings" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_Parking" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_VoroodyType">ورودی</label>
+                                <select asp-for="House_VoroodyType" asp-items="ViewBag.House_LST_Voroodies" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_VoroodyType" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" type="Date" id="GetDate" asp-for="House_DatePublish">تاریخ تخلیه</label>
+                                <input type="text" class="form-control" asp-for="House_DatePublish" id="input_CodeMelk" placeholder="تاریخ تخلیه">
+                                <span asp-validation-for="House_DatePublish" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_AB">آب</label>
+                                <select asp-for="House_AB" asp-items="ViewBag.House_LST_Abs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_AB" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_Gaz">گاز</label>
+                                <select asp-for="House_Gaz" asp-items="ViewBag.House_LST_Gazs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_Gaz" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_Bargh">برق</label>
+                                <select asp-for="House_Bargh" asp-items="ViewBag.House_LST_Barghs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_Bargh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="input" class="col-form-label" asp-for="House_OtherEmkanat">دیگر امکانات</label>
+                                <input type="text" class="form-control" asp-for="House_OtherEmkanat" id="input_CodeMelk" placeholder="دیگر امکانات">
+                                <span asp-validation-for="House_OtherEmkanat" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_PriceRahn">مبلغ رهن</label>
+                                <input type="text" class="form-control" asp-for="House_PriceRahn" id="input_CodeMelk" placeholder="ریال">
+                                <span asp-validation-for="House_PriceRahn" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_PriceEjareh">مبلغ اجاره</label>
+                                <input type="text" class="form-control" asp-for="House_PriceEjareh" id="input_CodeMelk" placeholder="ریال">
+                                <span asp-validation-for="House_PriceEjareh" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="input" class="col-form-label" asp-for="House_Address">آدرس</label>
+                                <input type="text" class="form-control" asp-for="House_Address" id="input_CodeMelk" placeholder="آدرس منزل مورد نظر را وارد نمایید">
+                                <span asp-validation-for="House_Address" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_StatusHouse">وضعیت منزل</label>
+                                <select asp-for="House_StatusHouse" asp-items="ViewBag.House_LST_Statuses" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="House_StatusHouse" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_Family">نام و نام خانوادگی</label>
+                                <input type="text" class="form-control" asp-for="House_Family" id="input_CodeMelk" placeholder="نام و نام خانوادگی موجر">
+                                <span asp-validation-for="House_Family" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="House_Mobile">شماره تماس</label>
+                                <input type="text" class="form-control" asp-for="House_Mobile" id="input_CodeMelk" placeholder="شماره تماس">
+                                <span asp-validation-for="House_Mobile" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="input" class="col-form-label" asp-for="House_Comment">توضیحات</label>
+                                <input type="text" class="form-control" asp-for="House_Comment" id="input_CodeMelk" placeholder="توضیحات">
+                                <span asp-validation-for="House_Comment" class="text-danger field-validation-error"></span>
+                            </div>
+                        </div>
+                    </div> <!-- card-box -->
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success waves-effect waves-light width-md">ثبت اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                        <button type="button" class="btn btn-outline-danger waves-effect waves-light width-md">انصراف<i class="mdi mdi-close ml-2"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

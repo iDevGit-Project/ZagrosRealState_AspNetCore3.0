@@ -1,0 +1,119 @@
+﻿@model ZagrosRealState.ViewModels.Views.CreateCustomersViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ثبت اطلاعات مشتریان";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                </div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">داشبرد مدیریت سامانه املاک زاگرس</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">ثبت اطلاعات</a></li>
+                    <li class="breadcrumb-item active">ثبت اطلاعات مشتریان</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-box">
+                <!-- Left sidebar -->
+                <div class="inbox-leftbar">
+                    <form action="#" method="post" class="dropzone" id="myAwesomeDropzone">
+                        <div class="fallback">
+                            <input name="file" type="file" />
+                        </div>
+                        <div class="dz-message needsclick">
+                            <span class="text-muted font-11">( تصاویر مربوط به مشتری را بارگزاری نمایید. )</span>
+                            <br />
+                            <span class="text-muted font-11">---</span>
+                            <br />
+                            <span class="text-muted font-11">( پسوند تصاویر : jpeg , png )</span>
+                            <br />
+                            <span class="text-muted font-11">---</span>
+                            <br />
+                            <span class="text-muted font-11">( حداکثر حجم : 150 کیلوبایت )</span>
+                            <br />
+                            <br />
+                            <i class="h1 text-muted dripicons-cloud-upload"></i>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Left sidebar -->
+                <form asp-action="Create">
+                    <div class="inbox-rightbar">
+                        <h4 class="header-title">مشخصات مشتری</h4>
+                        <br />
+                        <br />
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            <h4 class="alert-heading">کاربرگرامی</h4>
+                            <p>جهت تکمیل اطلاعات مربوط به مشتری، تکمیل موارد زیر الزامی هستند :</p>
+                            <hr>
+                            <strong>* نام ، </strong>
+                            <strong>نام خانوادگی ، </strong>
+                            <strong>کد ملی ، </strong>
+                            <strong>شماره موبایل ، </strong>
+                            <strong>شغل و </strong>
+                            <strong>آدرس . </strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="Customers_Name">نام</label>
+                                <input type="text" class="form-control" asp-for="Customers_Name" id="input_CodeMelk" placeholder="نام مشتری">
+                                <span asp-validation-for="Customers_Name" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="Customers_Family">نام خانوادگی</label>
+                                <input type="text" class="form-control" asp-for="Customers_Family" id="input_Metrazh" placeholder="نام خانوادگی">
+                                <span asp-validation-for="Customers_Family" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="Customers_CodeMelli">کد ملی</label>
+                                <input type="text" class="form-control" asp-for="Customers_CodeMelli" id="input_Tabagheh" placeholder="کد ملی">
+                                <span asp-validation-for="Customers_CodeMelli" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="Customers_Mobile">شماره موبایل</label>
+                                <input type="text" class="form-control" asp-for="Customers_Mobile" id="input_Tabagheh" placeholder="شماره موبایل">
+                                <span asp-validation-for="Customers_Mobile" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="input" class="col-form-label" asp-for="Customers_Job">شغل</label>
+                                <select asp-for="Customers_Job" asp-items="ViewBag.Customers_LST_JOBs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                    <option value=""></option>
+                                </select>
+                                <span asp-validation-for="Customers_Job" class="text-danger field-validation-error"></span>
+                            </div>
+                            <div class="form-group col-md-9">
+                                <label for="input" class="col-form-label" asp-for="Customers_Address">آدرس</label>
+                                <input type="text" class="form-control" asp-for="Customers_Address" id="input_Tabagheh" placeholder="آدرس مشتری را وارد نمایید">
+                                <span asp-validation-for="Customers_Address" class="text-danger field-validation-error"></span>
+                            </div>
+                        </div>
+                    </div> <!-- card-box -->
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success waves-effect waves-light width-md">ثبت اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                        <button type="button" class="btn btn-outline-danger waves-effect waves-light width-md">انصراف<i class="mdi mdi-close ml-2"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

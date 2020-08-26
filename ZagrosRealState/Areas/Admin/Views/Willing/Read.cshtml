@@ -1,0 +1,226 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ZagrosRealState.ViewModels.Views.ViewDataWillingModel>
+@inject ZagrosRealState.Common.PublicClasses.ConvertDate convertDate
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, ReflectionIT.Mvc.Paging
+@{
+    ViewData["Title"] = "نمایش اطلاعات خواهان";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+            </div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript: void(0);">داشبرد مدیریت سامانه املاک زاگرس</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0);">مدیریت دسته بندی ها</a></li>
+                <li class="breadcrumb-item active"> اطلاعات خواهان</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="card-box ribbon-box">
+        <div class="ribbon ribbon-primary float-left">مدیریت اطلاعات خواهان</div>
+        <div class="dropdown float-right">
+            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                <i class="mdi mdi-dots-horizontal"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="javascript:window.print()" class="dropdown-item mdi mdi-printer mr-1"> دریافت گزارش </a>
+                <a href="javascript:void(0);" i class="dropdown-item  mdi mdi-undo-variant"> بروزرسانی داده ها </a>
+            </div>
+        </div>
+        <div class="ribbon-content">
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <h4 class="header-title">جستجوی داده ها</h4>
+                                <br />
+                                <p class="sub-header">
+                                    جهت جستجوی اطلاعات خواهان از پارامتر های زیر استفاده کنید.
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>نام و نام خانوادگی موجر</label>
+                                                <input type="text" class="form-control" maxlength="50" placeholder="نام یا نام خانوادگی موجر">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>شماره موبایل</label>
+                                                <input type="text" class="form-control" maxlength="11" placeholder="شماره موبایل را وارد نمایید">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>آدرس</label>
+                                                <input type="text" class="form-control" maxlength="512" placeholder="آدرس خواهان را وارد نمایید">
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                    <div class="col-md-3">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label for="input">وضعیت خواهان</label>
+                                                <select asp-items="ViewBag.Willing_LSTs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div> <!-- end col -->
+                                </div>
+                                <!-- end row -->
+
+                            </div> <!-- end card-box -->
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+                    <!-- START - Modal -->
+                    @*<form asp-action="">*@
+
+                    <div class="modal fade editWilling" tabindex="-1" role="dialog"
+                         aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static"
+                         style="display: none;">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary">
+                                    <h4 class="modal-title" id="myLargeModalLabel">ویرایش اطلاعات خواهان</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">نام</label>
+                                            <input type="text" class="form-control" id="input_CodeMelk" placeholder="نام خواهان">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">نام خانوادگی</label>
+                                            <input type="text" class="form-control" id="input_Metrazh" placeholder="نام خانوادگی">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">شماره موبایل</label>
+                                            <input type="text" class="form-control" maxlength="11" id="input_Tabagheh" placeholder="شماره موبایل">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">مبلغ پیش پرداخت</label>
+                                            <input type="text" class="form-control" id="input_Tabagheh" placeholder="ریال">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">خواهان</label>
+                                            <select asp-items="ViewBag.Willing_LSTs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">جهت</label>
+                                            <select asp-items="ViewBag.Willing_LST_Jahats" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">به مشخصات</label>
+                                            <input type="text" class="form-control" id="input_Tabagheh" placeholder="مشخصات را وارد نمایید">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="input" class="col-form-label">آدرس</label>
+                                            <input type="text" class="form-control" maxlength="512" id="input_Tabagheh" placeholder="آدرس خواهان را وارد نمایید">
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-success waves-effect waves-light width-md" id="example-success">ویرایش نهایی اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-outline-danger waves-effect waves-light width-md">بازگشت<i class="mdi mdi-close ml-2"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade deleteWilling" tabindex="-1" role="dialog"
+                         aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static"
+                         style="display: none;">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h4 class="modal-title" id="myLargeModalLabel">حذف اطلاعات خواهان</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        شما قصد حذف اطلاعات مربوط به خواهان را دارید. آیا ادامه میدهید؟
+                                        <hr />
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-outline-danger waves-effect waves-light width-md">حذف نهایی اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-outline-danger waves-effect waves-light width-md">بازگشت<i class="mdi mdi-close ml-2"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if (ViewBag.AddNewDataMessageWilling != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible">
+                            @ViewBag.AddNewDataMessageWilling
+                        </div>
+                    }
+
+                    <table id="datatable" class="table table-striped table-bordered dt-responsive wrap">
+                        <thead>
+                            <tr>
+                                <th>نام</th>
+                                <th>نام خانوادگی</th>
+                                <th>شماره موبایل</th>
+                                <th>مبلغ پیش پرداخت. ریال</th>
+                                <th>خواهان </th>
+                                <th>جهت</th>
+                                <th>به مشخصات</th>
+                                <th>آدرس</th>
+                                <th>تاریخ ثبت</th>
+                                <th>عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var WillingsItem in Model)
+                            {
+                                <tr>
+                                    <td>@WillingsItem.Willing_Name</td>
+                                    <td>@WillingsItem.Willing_Family</td>
+                                    <td>@WillingsItem.Willing_Mobile</td>
+                                    <td>@WillingsItem.Willing_Price</td>
+                                    <td>@WillingsItem.Willing_WillingList</td>
+                                    <td>@WillingsItem.Willing_JahatList</td>
+                                    <td>@WillingsItem.Willing_Moshakhasat</td>
+                                    <td>@WillingsItem.Willing_Address</td>
+                                    <td>@convertDate.ConvertMiladiToShamsi((DateTime)WillingsItem.Willing_DatePublish, "yyyy/MM/dd")</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-sm btn-light waves-effect" data-toggle="modal" data-target=".editWilling"><i class="mdi mdi-pencil font-18 vertical-middle"></i></button>
+                                        <a href="#" data-toggle="modal" data-target=".deleteWilling" button type="submit" class="btn btn-sm btn-light waves-effect"><i class="mdi mdi-delete font-18 vertical-middle"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row">
+
+                        <nav>
+                            @await this.Component.InvokeAsync("Pager", new { PagingList = this.Model })
+                        </nav>
+
+                    </div>
+                    @*</form>*@
+                </div> <!-- end col -->
+            </div>
+        </div>
+    </div>
+
+</div>
+

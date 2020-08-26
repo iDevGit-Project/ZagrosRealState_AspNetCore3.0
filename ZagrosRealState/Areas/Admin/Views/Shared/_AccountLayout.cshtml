@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta content="سامانه اسناد املاک زاگرس" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/assets/signin/css/fontiran.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/signin/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/signin/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/signin/img/favicon-16x16.png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/signin/vendors/css/base/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/signin/vendors/css/base/seenboard-1.0.css">
+
+    <link rel="icon" type="image/png" href="~/images/logo-zagros.png" />
+</head>
+<body class="bg-fixed-02">
+    <div id="preloader">
+        <div class="canvas">
+            <img src="/assets/signin/img/logo.png" alt="logo" class="loader-logo">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="/assets/signin/vendors/js/base/jquery.min.js"></script>
+    <script src="/assets/signin/vendors/js/base/core.min.js"></script>
+    <!-- End Vendor Js -->
+    <!-- Begin Page Vendor Js -->
+    <script src="/assets/signin/vendors/js/app/app.min.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

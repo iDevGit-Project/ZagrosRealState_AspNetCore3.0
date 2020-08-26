@@ -1,0 +1,255 @@
+﻿@model ZagrosRealState.ViewModels.Views.CreateApartmentViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ثبت اطلاعات آپارتمان";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                    </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">داشبرد مدیریت سامانه املاک زاگرس</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">ثبت اطلاعات</a></li>
+                        <li class="breadcrumb-item active">ثبت اطلاعات آپارتمان</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card-box">
+                        <!-- Left sidebar -->
+                        <div class="inbox-leftbar">
+                            <div class="dropzone" id="myAwesomeDropzone">
+                                <div class="dz-message needsclick">
+                                    <span class="text-muted font-11">( تصاویر مربوط به آپارتمان را بارگزاری نمایید. )</span>
+                                    <br />
+                                    <span class="text-muted font-11">-----------</span>
+                                    <br />
+                                    <span class="text-muted font-11">( پسوند تصاویر : jpeg , png , jpg )</span>
+                                    <br />
+                                    <span class="text-muted font-11">-----------</span>
+                                    <br />
+                                    <div class="fallback">
+                                        <input asp-for="Apartment_Image" accept=".jpg, .png, .jpeg, .JPG, .PNG, .JPEG" type="file" />
+                                    </div>
+                                        <span asp-validation-for="Apartment_Image" class="text-danger field-validation-error"></span>
+                                    <br />
+                                    <i class="h1 text-muted dripicons-cloud-upload"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Left sidebar -->
+
+                        <div class="inbox-rightbar">
+                            <h4 class="header-title">مشخصات آپارتمان</h4>
+                            <br />
+                            <br />
+                            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                <h4 class="alert-heading">کاربرگرامی</h4>
+                                <p>جهت تکمیل اطلاعات مربوط به آپارتمان، تکمیل موارد زیر الزامی هستند :</p>
+                                <hr>
+                                <strong>* موجر ، </strong>
+                                <strong>موبایل ، </strong>
+                                <strong>متراژ ، </strong>
+                                <strong>طبقه ، </strong>
+                                <strong>خواب ، </strong>
+                                <strong>امکانات ، </strong>
+                                <strong>مبلغ رهن ، </strong>
+                                <strong>مبلغ اجاره ، </strong>
+                                <strong>آدرس و </strong>
+                                <strong>وضعیت آپارتمان .</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_CodeId">کد ملک</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_CodeId" id="Apartment_CodeId" placeholder="کد ملک">
+                                    <span asp-validation-for="Apartment_CodeId" class="text-danger field-validation-error"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Metrazh">متراژ</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_Metrazh" id="Apartment_Metrazh" placeholder="مترمربع">
+                                    <span asp-validation-for="Apartment_Metrazh" class="text-danger field-validation-error"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Tabaghe">طبقه</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_Tabaghe" id="Apartment_Tabaghe" placeholder="طبقه">
+                                    <span asp-validation-for="Apartment_Tabaghe" class="text-danger field-validation-error"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Ejareh">وضعیت اجاره</label>
+                                    <select asp-for="Apartment_Ejareh" asp-items="ViewBag.Apartment_LST_Ejarehs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Ejareh" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Takhliyeh">تخلیه فوری</label>
+                                    <select asp-for="Apartment_Takhliyeh" asp-items="ViewBag.Apartment_LST_Takhliyehs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Takhliyeh" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_NumKhab">تعداد خواب</label>
+                                    <select asp-for="Apartment_NumKhab" asp-items="ViewBag.Apartment_LST_NumKhabs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_NumKhab" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_NumBolook">بلوک</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_NumBolook" id="input_Bolock" placeholder="عدد وارد شود">
+                                    <span asp-validation-for="Apartment_NumBolook" class="text-danger field-validation-error"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_NumVahed">واحد</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_NumVahed" id="input_Vahed" placeholder="عدد وارد شود">
+                                    <span asp-validation-for="Apartment_NumVahed" class="text-danger field-validation-error"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Enshaaab_Aab">آب</label>
+                                    <select asp-for="Apartment_Enshaaab_Aab" asp-items="ViewBag.Apartment_LST_NumABs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Enshaaab_Aab" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Enshaaab_Gaaz">گاز</label>
+                                    <select asp-for="Apartment_Enshaaab_Gaaz" asp-items="ViewBag.Apartment_LST_NumGAZs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Enshaaab_Gaaz" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Enshaaab_Baargh">برق</label>
+                                    <select asp-for="Apartment_Enshaaab_Baargh" asp-items="ViewBag.Apartment_LST_NumBarghs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Enshaaab_Baargh" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Enshaaab_Telephone">تلفن</label>
+                                    <select asp-for="Apartment_Enshaaab_Telephone" asp-items="ViewBag.Apartment_LST_NumTELLs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Enshaaab_Telephone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_StatusEnshaaab">وضعیت امکانات</label>
+                                    <select asp-for="Apartment_StatusEnshaaab" asp-items="ViewBag.Apartment_LST_EmkanatSatus" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_StatusEnshaaab" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Parking">پارکینگ</label>
+                                    <select asp-for="Apartment_Parking" asp-items="ViewBag.Apartment_LST_Parkings" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Parking" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Anbari">انباری</label>
+                                    <select asp-for="Apartment_Anbari" asp-items="ViewBag.Apartment_LST_Anbaris" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Anbari" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Asansor">آسانسور</label>
+                                    <select asp-for="Apartment_Asansor" asp-items="ViewBag.Apartment_LST_Asansors" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Asansor" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Shoofazh">شوفاژ</label>
+                                    <select asp-for="Apartment_Shoofazh" asp-items="ViewBag.Apartment_LST_Shoofazhs" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_Shoofazh" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_HagheCharge">حق شارژ</label>
+                                    <select asp-for="Apartment_HagheCharge" asp-items="ViewBag.Apartment_LST_HagheCharges" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_HagheCharge" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_HagheCharge_Price">مبلغ حق شارژ</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_HagheCharge_Price" id="input_HagheCharge" placeholder="ریال">
+                                    <span asp-validation-for="Apartment_HagheCharge_Price" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_PriceRahn">مبلغ رهن</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_PriceRahn" id="input_PriceRahn" placeholder="ریال">
+                                    <span asp-validation-for="Apartment_PriceRahn" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_PriceEjareh">مبلغ اجاره</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_PriceEjareh" id="input_PriceEjareh" placeholder="ریال">
+                                    <span asp-validation-for="Apartment_PriceEjareh" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_StatusRahnAparteman">وضعیت آپارتمان</label>
+                                    <select asp-for="Apartment_StatusRahnAparteman" asp-items="ViewBag.Apartment_LST_ApartemanStatuses" class="selectpicker" data-style="btn-light" data-toggle="dropdown">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="Apartment_StatusRahnAparteman" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Address">آدرس</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_Address" id="input_Touzihat" placeholder="آدرس آپارتمان مورد نظر را وارد نمایید.">
+                                    <span asp-validation-for="Apartment_Address" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_MojerName">نام و نام خانوادگی</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_MojerName" id="input_MoujerInfo" placeholder="اطلاعات موجر">
+                                    <span asp-validation-for="Apartment_MojerName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_MojerTell">شماره تماس</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_MojerTell" id="input_Phone" placeholder="شماره ثابت یا موبایل">
+                                    <span asp-validation-for="Apartment_MojerTell" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="input" class="col-form-label" asp-for="Apartment_Description">توضیحات</label>
+                                    <input type="text" class="form-control" asp-for="Apartment_Description" id="input_Touzihat" placeholder="درج توضیحات مربوط به آپارتمان">
+                                    <span asp-validation-for="Apartment_Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            @*for animated suucess Insert Data =>  id="example-success"*@
+                            <button type="submit" class="btn btn-success waves-effect waves-light width-md">ثبت اطلاعات<i class="mdi mdi-content-save ml-2"></i></button>
+                            <button type="button" class="btn btn-outline-danger waves-effect waves-light width-md">انصراف<i class="mdi mdi-close ml-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+
+
+    <!-- end inbox-rightbar-->
+    <div class="clearfix"></div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
