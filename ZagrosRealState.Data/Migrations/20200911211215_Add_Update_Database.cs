@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ZagrosRealState.Data.Migrations
 {
-    public partial class ZagrosRealState : Migration
+    public partial class Add_Update_Database : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

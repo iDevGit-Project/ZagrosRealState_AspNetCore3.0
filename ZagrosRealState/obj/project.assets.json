@@ -10139,19 +10139,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iDevTeam\\.nuget\\packages\\": {}
+    "C:\\Users\\iDevHome\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj",
+      "projectUniqueName": "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj",
       "projectName": "ZagrosRealState",
-      "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj",
-      "packagesPath": "C:\\Users\\iDevTeam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\obj\\",
+      "projectPath": "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\ZagrosRealState.csproj",
+      "packagesPath": "C:\\Users\\iDevHome\\.nuget\\packages\\",
+      "outputPath": "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\iDevTeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\iDevHome\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10164,17 +10164,17 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj": {
-              "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj"
+            "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj": {
+              "projectPath": "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Common\\ZagrosRealState.Common.csproj"
             },
-            "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj": {
-              "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj"
+            "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj": {
+              "projectPath": "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.Data\\ZagrosRealState.Data.csproj"
             },
-            "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj": {
-              "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj"
+            "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj": {
+              "projectPath": "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.SMS\\ZagrosRealState.SMS.csproj"
             },
-            "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\iDevTeam\\Desktop\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj"
+            "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj": {
+              "projectPath": "E:\\Project\\WebProject\\Zagros RealState\\RealState\\ZagrosRealState.ViewModels\\ZagrosRealState.ViewModels.csproj"
             }
           }
         }
@@ -10255,6 +10255,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.0.1, 3.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.0.3, 3.0.3]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -10263,7 +10273,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
