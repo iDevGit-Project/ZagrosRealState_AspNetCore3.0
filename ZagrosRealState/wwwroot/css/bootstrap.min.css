@@ -2388,22 +2388,22 @@ pre code {
 }
 
 .form-control {
-    display: block;
-    width: 100%;
-    height: calc(1.5em + .9rem + 2px);
-    padding: 1.1rem .7rem;
-    font-size: 12px;
-    text-align: center;
-    line-height: 1.5;
-    color: #192d4e;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #f2f2f2;
-    border-radius: .2rem;
-    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out
+	display: block;
+	width: 100%;
+	height: calc(1.5em + .9rem + 2px);
+	padding: 1.1rem .7rem;
+	font-size: 12px;
+	text-align: center;
+	line-height: 1.5;
+	color: #192d4e;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px dashed #d2d2d2;
+	border-radius: .2rem;
+	-webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -3273,7 +3273,8 @@ fieldset:disabled a.btn {
 .btn-light {
 	color: #414d5f;
 	background-color: #f3f8ff;
-    border-color: #D6E6FF;
+	/*border-color: #D6E6FF;*/
+	border: 1px dashed #cce1ff;
 }
 
 .btn-light:hover {
