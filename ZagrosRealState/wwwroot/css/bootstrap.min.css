@@ -4048,12 +4048,12 @@ input[type=submit].btn-block {
 	border: 0
 }
 
-.dropdown-item:focus,
-.dropdown-item:hover {
-	color: #272e37;
-	text-decoration: none;
-	background-color: #f8f9fa
-}
+	.dropdown-item:focus,
+	.dropdown-item:hover {
+		color: #272e37;
+		text-decoration: none;
+		background-color: #EBF3FF;
+	}
 
 .dropdown-item.active,
 .dropdown-item:active {
