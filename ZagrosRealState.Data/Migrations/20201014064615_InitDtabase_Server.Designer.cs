@@ -10,8 +10,8 @@ using ZagrosRealState.Data.Models.DbContext;
 namespace ZagrosRealState.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201012063731_Initial_DbLocal")]
-    partial class Initial_DbLocal
+    [Migration("20201014064615_InitDtabase_Server")]
+    partial class InitDtabase_Server
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
